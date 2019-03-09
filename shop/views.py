@@ -9,7 +9,7 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
 
-    products = Product.objects.filter(available=True, slug=category_slug)
+    products = Product.objects.filter(available=True)
 
     context = {
         'category': category,
